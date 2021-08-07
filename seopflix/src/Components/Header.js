@@ -12,18 +12,31 @@ const Header = styled.header`
   display: flex;
   align-items: center;
   padding: 0px 10px;
+  background-color: rgba(20, 20, 20, 0.7);
+  z-index: 10;
+  box-shadow: 0px 1px 5px 2px rgba(0, 0, 0, 0.8);
 `;
 
 const List = styled.ul`
   display: flex;
-  &:hover {
-    background-color: blue;
-  }
 `;
 
-const Item = styled.li``;
+const Item = styled.li`
 
-const SLink = styled(Link)``;
+  width: 80px;
+  height: 50px;
+  text-align:center;
+
+`;
+
+const SLink = styled(Link)`
+
+height: 50px;
+display: flex;
+align-items: center;
+justify-content: center;
+
+`;
 
 const exportHeader = () => (
   <Header>
