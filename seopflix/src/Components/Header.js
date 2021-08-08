@@ -11,7 +11,6 @@ const Header = styled.header`
   height: 50px;
   display: flex;
   align-items: center;
-  padding: 0px 10px;
   background-color: rgba(20, 20, 20, 0.7);
   z-index: 10;
   box-shadow: 0px 1px 5px 2px rgba(0, 0, 0, 0.8);
@@ -22,11 +21,10 @@ const List = styled.ul`
 `;
 
 const Item = styled.li`
-
   width: 80px;
   height: 50px;
   text-align:center;
-
+  border-bottom: 5px solid ${props.current ? "red" : 'transparent'};
 `;
 
 const SLink = styled(Link)`
@@ -41,13 +39,13 @@ justify-content: center;
 const exportHeader = () => (
   <Header>
     <List>
-      <Item>
+      <Item current={true}>
         <SLink href="/">Movies</SLink>
       </Item>
-      <Item>
+      <Item current={true}>
         <SLink href="/tv">TV</SLink>
       </Item>
-      <Item>
+      <Item current={true}>
         <SLink href="/search">Search</SLink>
       </Item>
     </List>
