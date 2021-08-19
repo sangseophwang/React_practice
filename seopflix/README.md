@@ -13,6 +13,9 @@
 
 - [ ] Now Playing (Movie)
 - [ ] Upcoming (Movie)
-- [ ] Top Rated (TV, Movie)
-- [ ] Popular (TV, Movie)
+- [ ] Top Rated (TV)
+- [ ] Popular (TV)
 - [ ] Airing Today (TV)
+- [ ] TV Show Detail
+- [ ] Movie Detail
+- [ ] Search (Movie, TV)
