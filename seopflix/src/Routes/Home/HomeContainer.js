@@ -1,6 +1,7 @@
 import React from "react";
 import HomePresenter from "./HomePresenter";
 
+// eslint-disable-next-line import/no-anonymous-default-export
 export default class extends React.Component{
   state= {
     nowPlaying:null,
