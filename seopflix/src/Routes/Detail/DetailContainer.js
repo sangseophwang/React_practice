@@ -1,26 +1,16 @@
 import React from "react";
-import HomePresenter from "./HomePresenter";
+import DetailPresenter from "./DetailPresenter";
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default class extends React.Component {
   state = {
-    nowPlaying: null,
-    upcoming: null,
-    popular: null,
+    result: null,
     error: null,
-    loading: null,
+    loading: true,
   };
 
   render() {
-    const { nowPlaying, upcoming, popular, error, loading } = this.state;
-    return (
-      <HomePresenter
-        nowPlaying={nowPlaying}
-        upcoming={upcoming}
-        popular={popular}
-        error={error}
-        loading={loading}
-      />
-    );
+    const { result, error, loading } = this.state;
+    return <DetailPresenter result={result} error={error} loading={loading} />;
   }
 }
