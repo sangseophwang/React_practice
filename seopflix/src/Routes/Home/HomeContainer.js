@@ -1,25 +1,41 @@
+import { movieApi } from "api";
 import React from "react";
 import HomePresenter from "./HomePresenter";
 
 // eslint-disable-next-line import/no-anonymous-default-export
-export default class extends React.Component{
-  state= {
-    nowPlaying:null,
+export default class extends React.Component {
+  state = {
+    nowPlaying: null,
     upcoming: null,
     popular: null,
-    error:null,
-    loading:null
+    error: null,
+    loading: true,
+  };
+
+  async componentDidMount() {
+    try {
+      movieApi.nowPlaying();
+    } catch {
+      this.setState({
+        error: "Can't find movies information.",
+      });
+    } finally {
+      this.setState({
+        loading: false,
+      });
+    }
   }
 
   render() {
     const { nowPlaying, upcoming, popular, error, loading } = this.state;
-    return( 
-    <HomePresenter 
+    return (
+      <HomePresenter
         nowPlaying={nowPlaying}
         upcoming={upcoming}
         popular={popular}
         error={error}
-        loading={loading} 
-    />
-  )}
+        loading={loading}
+      />
+    );
+  }
 }
