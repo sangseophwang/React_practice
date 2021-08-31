@@ -20,6 +20,10 @@ export default class extends React.Component {
       const {
         data: { results: upcoming },
       } = await movieApi.upcoming();
+      const {
+        data: { results: popular },
+      } = await movieApi.popular();
+      this.setState({ nowPlaying, upcoming, popular });
     } catch {
       this.setState({
         error: "Can't find movies information.",
