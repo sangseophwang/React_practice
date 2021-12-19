@@ -1,0 +1,15 @@
+$Color: royalblue;
+
+body {
+  background-color: orange;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  h1 {
+    color: $Color;
+    font-size: 100px;
+    font-weight: 700;
+  }
+}

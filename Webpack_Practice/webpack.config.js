@@ -21,9 +21,9 @@ module.exports = {
   module: {
     rules: [
       {
-        // .css 라는 확장자를 찾는 정규표현식
-        test: /\.css$/,
-        use: ["style-loader", "css-loader"],
+        // .css 혹은 .scss 라는 확장자를 찾는 정규표현식
+        test: /\.s?css$/,
+        use: ["style-loader", "css-loader", "sass-loader"],
       },
     ],
   },
