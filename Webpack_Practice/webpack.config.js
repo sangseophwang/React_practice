@@ -2,6 +2,7 @@
 // node.js 환경에서 언제든지 가져와 사용할 수 있는 path라는 전용 모듈을 변수에 할당
 const path = require("path");
 const HtmlPlugin = require("html-webpack-plugin");
+const CopyPlugin = require("copy-webpack-plugin");
 
 // export
 module.exports = {
@@ -21,6 +22,10 @@ module.exports = {
   plugins: [
     new HtmlPlugin({
       template: "./index.html",
+    }),
+    // static 폴더를 지정해 그 안에 있는 파일들이 dist에 적용되도록 copy
+    new CopyPlugin({
+      patterns: [{ from: "static" }],
     }),
   ],
 
