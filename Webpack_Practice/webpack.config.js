@@ -1,6 +1,7 @@
 // import
 // node.js 환경에서 언제든지 가져와 사용할 수 있는 path라는 전용 모듈을 변수에 할당
 const path = require("path");
+const HtmlPlugin = require("html-webpack-plugin");
 
 // export
 module.exports = {
@@ -14,5 +15,16 @@ module.exports = {
     // filename: "main.js",
     // 기존에 만들어진 빌드 파일을 제거하는 옵션
     clean: true,
+  },
+
+  // 번들링 후 결과물의 처리 방식 등 다양한 플러그인들을 설정
+  plugins: [
+    new HtmlPlugin({
+      template: "./index.html",
+    }),
+  ],
+
+  devServer: {
+    host: "localhost",
   },
 };
